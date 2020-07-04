@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MoveMesh.cs" type="Script" id=1]
+[ext_resource path="res://model_cat.glb" type="PackedScene" id=2]
+[ext_resource path="res://Move.cs" type="Script" id=3]
+[ext_resource path="res://anim_cat.tscn" type="PackedScene" id=4]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.768293, 0.377593, -0.516865, 0, 0.807477, 0.589898, 0.640098, -0.453215, 0.62038, -6.67814, 8.36694, 4.56891 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, -1.69256, 0, -6.084 )
+script = ExtResource( 1 )
+targetPath = NodePath("../Position3D2")
+
+[node name="model_animal_cat_v04 (NLA Setup)" parent="Position3D" instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="Spatial2" type="Spatial" parent="."]
+
+[node name="Position3D2" type="Position3D" parent="."]
+transform = Transform( 0.389542, 0, -0.921009, 0, 1, 0, 0.921009, 0, 0.389542, 3.73758, -0.794232, -3.32463 )
+script = ExtResource( 3 )
+
+[node name="model_animal_cat_v04 (NLA Setup)2" parent="Position3D2" instance=ExtResource( 2 )]
+transform = Transform( 0.0182202, 0, 0.999834, 0, 1, 0, -0.999834, 0, 0.0182202, 0, 0, 0 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 0.389542, 0, -0.921009, 0, 1, 0, 0.921009, 0, 0.389542, 14.6326, 0, -6.18887 )
+
+[node name="Position3D3" type="Position3D" parent="."]
+
+[node name="model_cat" parent="." instance=ExtResource( 4 )]
+nodePath = NodePath("")
